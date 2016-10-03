@@ -3,24 +3,22 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{401FB373-7066-4782-BF1F-B7111C277FD0}</ProjectGuid>
+    <ProjectGuid>{0DAE840F-F011-4172-BF88-F1DC86781D78}</ProjectGuid>
     <WebSharperProject>Site</WebSharperProject>
-    <WebProjectOutputDir>$(MSBuildThisFileDirectory)</WebProjectOutputDir>
-    <StartArguments>.. http://localhost:9000/</StartArguments>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
     <Tailcalls>false</Tailcalls>
-    <OutputPath>bin</OutputPath>
+    <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <Tailcalls>true</Tailcalls>
-    <OutputPath>bin</OutputPath>
+    <OutputPath>bin\Release</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
@@ -37,7 +35,8 @@
     <Compile Include="Client.fs" />
     <Compile Include="Main.fs" />
     <Content Include="Main.html" />
-    <Content Include="App.config" />
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Target Name="IncludeContent" BeforeTargets="Compile">
     <ItemGroup>
@@ -51,27 +50,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Web" />
-    <Reference Include="FSharp.Core">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Owin">
-      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin">
-      <HintPath>packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Hosting">
-      <HintPath>packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.HttpListener">
-      <HintPath>packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.FileSystems">
-      <HintPath>packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.StaticFiles">
-      <HintPath>packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.dll</HintPath>
     </Reference>
@@ -114,16 +92,23 @@
     <Reference Include="WebSharper.JQuery">
       <HintPath>packages\WebSharper.3.6.17.240\lib\net40\WebSharper.JQuery.dll</HintPath>
     </Reference>
-    <Reference Include="IntelliFactory.Xml">
-      <HintPath>packages\IntelliFactory.Xml.0.6.63.95\lib\net40\IntelliFactory.Xml.dll</HintPath>
+    <Reference Include="WebSharper.UI.Next">
+      <HintPath>packages\WebSharper.UI.Next.3.6.15.211\lib\net40\WebSharper.UI.Next.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSharper.UI.Next.Templating">
+      <HintPath>packages\WebSharper.UI.Next.3.6.15.211\lib\net40\WebSharper.UI.Next.Templating.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="WebSharper.Html.Client">
-      <HintPath>packages\WebSharper.Html.3.6.10.22\lib\net40\WebSharper.Html.Client.dll</HintPath>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="FSharp.Core">
+      <HintPath>packages\FSharp.Core.3.1.2.5\lib\net40\FSharp.Core.dll</HintPath>
     </Reference>
-    <Reference Include="WebSharper.Html.Server">
-      <HintPath>packages\WebSharper.Html.3.6.10.22\lib\net40\WebSharper.Html.Server.dll</HintPath>
+    <Reference Include="Owin">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
     <Reference Include="WebSharper.Owin">
       <HintPath>packages\WebSharper.Owin.3.6.13.132\lib\net45\WebSharper.Owin.dll</HintPath>
@@ -132,6 +117,12 @@
       <HintPath>packages\WebSharper.Owin.3.6.13.132\lib\net45\HttpMultipartParser.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
+    <Reference Include="Suave">
+      <HintPath>packages\Suave.1.1.3\lib\net40\Suave.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSharper.Suave">
+      <HintPath>packages\WebSharper.Suave.3.6.13.40\lib\net45\WebSharper.Suave.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <!-- F# targets -->
   <Choose>
@@ -155,7 +146,4 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Import Project="packages\WebSharper.3.6.17.240\build\WebSharper.targets" Condition="Exists('packages\WebSharper.3.6.17.240\build\WebSharper.targets')" />
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
 </Project>

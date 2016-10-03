@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "iUPSLP", "iUPSLP.fsproj", "{401FB373-7066-4782-BF1F-B7111C277FD0}"
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "iUPSLP", "iUPSLP.fsproj", "{0DAE840F-F011-4172-BF88-F1DC86781D78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{401FB373-7066-4782-BF1F-B7111C277FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{401FB373-7066-4782-BF1F-B7111C277FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{401FB373-7066-4782-BF1F-B7111C277FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{401FB373-7066-4782-BF1F-B7111C277FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DAE840F-F011-4172-BF88-F1DC86781D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DAE840F-F011-4172-BF88-F1DC86781D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DAE840F-F011-4172-BF88-F1DC86781D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DAE840F-F011-4172-BF88-F1DC86781D78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
